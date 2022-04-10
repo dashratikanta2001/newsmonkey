@@ -47,9 +47,10 @@ const News =(props)=> {
         settotalResults(parsedata.totalResults)
         setloading(false)
     };
+    
         return (
             <>
-                <h1 className='text-center' style={{ marginTop: "70px"}}>NewsMonkey - Top {capitalizeFirstLetter(props.category)} Headlines</h1>
+                <h1 className='text-center' style={{ marginTop: "70px" , backgroundColor:props.mode==='dark'?'#202124':'white', color:props.mode==='dark'?'white':'black' }}>NewsMonkey - Top {capitalizeFirstLetter(props.category)} Headlines</h1>
                 {loading && <Spinner />}
                 <InfiniteScroll
                     dataLength={articles.length}
@@ -57,11 +58,11 @@ const News =(props)=> {
                     hasMore={articles.length !== totalResults }
                     loader={loading && <Spinner />}
                 >
-                    <div className="container">
+                    <div className="container" style={{backgroundColor : props.mode==='dark'?'#202124':'white', color:props.mode==='dark'?'white':'black'}}>
                         <div className="row">
                             {articles.map((element) => {
-                                return <div key={`${element.url}${i= i+1}`} className="col-md-3">
-                                    <NewsItem title={element.title ? element.title : ""} description={element.description ? element.description : ""} imageUrl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name} />
+                                return <div key={`${element.url}${i= i+1}`} className="col-md-3" >
+                                    <NewsItem mode={props.mode} title={element.title ? element.title : ""} description={element.description ? element.description : ""} imageUrl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name} />
                                 </div>
                             })}
                         </div>
