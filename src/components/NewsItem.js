@@ -1,8 +1,7 @@
 import React from 'react'
 
 const NewsItem =(props)=> {
-        let { title, description, imageUrl, newsUrl, author, date,source ,mode} = props;
-        console.log(`mode  = `+ mode)
+        let { title, description, imageUrl, newsUrl, author, date,source} = props;
         return (
             <div className="my-3">
                 <div className="card" style={{backgroundColor : props.mode==='dark'?'#202124':'white', color:props.mode==='dark'?'white':'black', border:props.mode==='dark'? '1px solid #737373':''}}>

@@ -25,7 +25,6 @@ const App =()=> {
 
     }
   }
-  console.log(`theme ====`+ Mode)
   const [progress, setProgress] = useState(0)
 
     return (
@@ -40,7 +39,7 @@ const App =()=> {
           <Route exact path="/" element={<News mode = {Mode} setProgress={setProgress} apiKey={apikey} key="general-home" pageSize={pageSize} country="in" category="general" />} />
           <Route exact path="/business" element={<News mode = {Mode} setProgress={setProgress} apiKey={apikey} key="business" pageSize={pageSize} country="in" category="business" />} />
           <Route exact path="/entertainment" element={<News setProgress={setProgress} apiKey={apikey} key="entertainment" pageSize={pageSize} country="in" category="entertainment" />} />
-          <Route exact path="/general" element={<News mode = {Mode} setProgress={setProgress} apikKy={apikey} key="general" pageSize={pageSize} country="in" category="general" />} />
+          <Route exact path="/general" element={<News mode = {Mode} setProgress={setProgress} apiKey={apikey} key="general" pageSize={pageSize} country="in" category="general" />} />
           <Route exact path="/health" element={<News mode = {Mode} setProgress={setProgress} apiKey={apikey} key="health" pageSize={pageSize} country="in" category="health" />} />
           <Route exact path="/science" element={<News mode = {Mode} setProgress={setProgress} apiKey={apikey} key="science" pageSize={pageSize} country="in" category="science" />} />
           <Route exact path="/sports" element={<News mode = {Mode} setProgress={setProgress} apiKey={apikey} key="sports" pageSize={pageSize} country="in" category="sports" />} />
